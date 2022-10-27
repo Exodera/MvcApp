@@ -1,4 +1,4 @@
-﻿@model FirstMvcApp.Models.DogViewModel
+﻿@model DogViewModel
 
 
 @*
@@ -16,26 +16,31 @@
 			</div>
 
 				<div class="card-body">
-					<form>
+					<form asp-controller="HelloWorld" asp-action="CreateDog" method="post">
 						<div class="mb-3">
 							<label class="form-label">Dog Name</label>
-							<input type="text" class="form-control" />
+							<input asp-for="Name" type="text" class="form-control" />
 						</div>
 
 						<div class="mb-3">
 							<label class="form-label">Dog Age</label>
-							<input type="number" class="form-control" />
+							<input asp-for=Age type="number" class="form-control" />
 						</div>
-						<button class="btn btn-primary" >Save</button>
+						<div>
+							<button class="btn btn-primary" type="submit">Save</button>
+						</div>
 
 					</form>
 
 				</div>
 
 			<div class="card-footer">
-				<label class="form-label">Enjoy!</label>
-			
+				
 			</div>
+
+			@*<p>
+				Hello your dog's name is  @Model.Name
+			</p>*@
 
 		</div>
 
